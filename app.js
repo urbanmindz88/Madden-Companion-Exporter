@@ -11,7 +11,7 @@ var serviceAccount = require('./Firebase_Info.json');
 // TODO: Enter your database url from firebase
 admin.initializeApp({
    credential: admin.credential.cert(serviceAccount),
-   databaseURL: 'https://maddenexporter-3a368.firebaseio.com/'
+   databaseURL: 'https://maddenexporter-3a368.firebaseio.com'
  });
 
 
