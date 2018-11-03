@@ -14,6 +14,20 @@ admin.initializeApp({
    databaseURL: 'https://maddenexporter-3a368.firebaseio.com'
  });
 
+app.get('/:user', function(req, res) {
+  //return res.send('Madden Data')
+  return res.send("username is set to " + req.params.user);
+});
+
+//Clear firebase database
+app.get('/delete/:user', function(req, res) {
+  const db = admin.database();
+  const ref = db.ref();
+  const dataRef = ref.child(req.params.user);
+  dataRef.remove();
+  return res.send('Madden Data Cleared for ' + req.params.user);
+});
+
 
 app.set('port', (process.env.PORT || 3001));
 
